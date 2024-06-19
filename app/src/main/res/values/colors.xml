@@ -12,4 +12,6 @@
     <color name="light_blue">#A0E3E2</color>
     <color name="light_purple">#AEAFF7</color>
 
+    <color name="colorPrimary">@color/green</color>
+
 </resources>
