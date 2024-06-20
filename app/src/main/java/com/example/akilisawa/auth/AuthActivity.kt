@@ -1,19 +1,16 @@
 package com.example.akilisawa.auth
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.example.akilisawa.R
+import com.example.akilisawa.adapter.RadioButtonPagerAdapter
 import com.example.akilisawa.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAuthBinding
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,22 +18,21 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        setSupportActionBar(binding.toolbar)
+        // Set up the ViewPager with an adapter
+        viewPager = binding.viewPager
+        viewPager.adapter = RadioButtonPagerAdapter(this)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_auth)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        // Change the selected radio button when a page is selected in the ViewPager
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                binding.radioGroup.check(binding.radioGroup.getChildAt(position).id)
+            }
+        })
 
-//        binding.fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null)
-//                .setAnchorView(R.id.fab).show()
-//        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_auth)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        // Change the current item in the ViewPager when a radio button is selected
+        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
+            val selectedIndex = binding.radioGroup.indexOfChild(binding.radioGroup.findViewById(checkedId))
+            viewPager.currentItem = selectedIndex
+        }
     }
 }
