@@ -6,6 +6,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.akilisawa.R
 import com.example.akilisawa.adapter.RadioButtonPagerAdapter
 import com.example.akilisawa.databinding.ActivityAuthBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class AuthActivity : AppCompatActivity() {
 
@@ -22,17 +23,8 @@ class AuthActivity : AppCompatActivity() {
         viewPager = binding.viewPager
         viewPager.adapter = RadioButtonPagerAdapter(this)
 
-        // Change the selected radio button when a page is selected in the ViewPager
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                binding.radioGroup.check(binding.radioGroup.getChildAt(position).id)
-            }
-        })
-
-        // Change the current item in the ViewPager when a radio button is selected
-        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            val selectedIndex = binding.radioGroup.indexOfChild(binding.radioGroup.findViewById(checkedId))
-            viewPager.currentItem = selectedIndex
-        }
+        // Set up the TabLayout to work with the ViewPager
+        val tabLayout = binding.tabLayout
+        TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
     }
 }
