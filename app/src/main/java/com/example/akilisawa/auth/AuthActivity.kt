@@ -24,7 +24,7 @@ class AuthActivity : AppCompatActivity() {
         viewPager.adapter = RadioButtonPagerAdapter(this)
 
         // Set up the TabLayout to work with the ViewPager
-        val tabLayout = binding.tabLayout
-        TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
-    }
+//        val tabLayout = binding.tabLayout
+//        TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
+//    }
 }
