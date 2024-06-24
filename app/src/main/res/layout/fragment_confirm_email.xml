@@ -1,0 +1,147 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Back button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_arrow_back_24"
+        app:backgroundTint="@color/green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white" />
+
+    <!-- Reset Password text -->
+    <TextView
+        android:id="@+id/resetPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="RESET PASSWORD"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton" />
+
+    <!-- Confirm email address text -->
+    <TextView
+        android:id="@+id/confirmEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm email address"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resetPasswordText" />
+
+    <!-- Description text -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="We just need some additional info to confirm it’s you."
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginEnd="16dp"
+        app:layout_constraintMarginStart="16dp"
+        app:layout_constraintMarginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmEmailText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/smsOptionLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionText">
+
+        <RadioGroup
+            android:id="@+id/smsOptionGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintMarginEnd="16dp"
+            app:layout_constraintMarginStart="16dp"
+            app:layout_constraintMarginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioSms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:drawableStart="@drawable/outline_add_ic_call_24"
+                android:drawablePadding="8dp"
+                android:text="+254 *** *** 902"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mailOptionLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smsOptionLayout">
+
+        <RadioGroup
+            android:id="@+id/mailOptionGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintMarginEnd="16dp"
+            app:layout_constraintMarginStart="16dp"
+            app:layout_constraintMarginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/round_attach_email_24"
+                android:drawablePadding="8dp"
+                android:text="n********a@g********"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Next button -->
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Next"
+        android:textAllCaps="true"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailOptionLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

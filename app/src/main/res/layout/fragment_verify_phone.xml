@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_arrow_back_24"
+        app:backgroundTint="@color/green"
+        app:tint="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/registrationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRATION"
+        android:textSize="16sp"
+        android:textColor="@color/green"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/verifyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Your Phone Number"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        app:layout_constraintTop_toBottomOf="@id/registrationTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enter the code send to the phone number ending with *902"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/verifyTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/codeInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/instructionText">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textAlignment="center"
+            android:background="@drawable/line"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textAlignment="center"
+            android:background="@drawable/line"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textAlignment="center"
+            android:background="@drawable/line"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textAlignment="center"
+            android:background="@drawable/line"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textAlignment="center"
+            android:background="@drawable/line" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resendTimerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend verification code (90)"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/codeInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textAllCaps="false"
+        app:icon="@drawable/keyboard_arrow_right_fill0_wght400_grad0_opsz24_svg"
+        app:iconGravity="end"
+        android:padding="12dp"
+        android:layout_marginTop="32dp"
+        app:cornerRadius="8dp"
+        android:background="@color/green"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/resendTimerText" />
+
+    <TextView
+        android:id="@+id/resendCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend Code"
+        android:textSize="16sp"
+        android:textColor="@color/green"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/continueButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

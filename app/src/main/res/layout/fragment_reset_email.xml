@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_arrow_back_24"
+        app:backgroundTint="@color/green"
+        app:tint="@android:color/white"
+        app:fabSize="mini"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="Back"/>
+
+    <TextView
+        android:id="@+id/resetPasswordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET PASSWORD"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/confirmEmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm email address"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resetPasswordTitle"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/instructionsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Forgot your password? Enter your email below, and we'll share instructions for setting a new one"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/confirmEmailTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/requiredText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="*Required"
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintTop_toBottomOf="@id/instructionsText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        app:layout_constraintTop_toBottomOf="@id/requiredText"
+        android:layout_marginTop="6dp"
+        app:startIconDrawable="@drawable/round_attach_email_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxBackgroundColor="@android:color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="46dp"
+            android:paddingEnd="12dp"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:layout_marginTop="24dp"
+        app:backgroundTint="@color/green"
+        app:layout_constraintTop_toBottomOf="@id/emailLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
