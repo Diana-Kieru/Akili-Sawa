@@ -12,7 +12,7 @@ data class MoodItem(
 )
 
 class MoodViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val moodImageView: ImageView = view.findViewById(R.id.moodImageView)
+    val moodImageView: ImageView = view.findViewById(R.id.moodIcon)
 }
 
 class MoodAdapter(private val moods: List<MoodItem>) :
