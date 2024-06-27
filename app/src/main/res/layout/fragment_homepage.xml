@@ -152,10 +152,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:background="#FF5252"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/pink"
                     android:text="Emergency SOS"
                     android:textColor="#FFFFFF"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="16dp" />
 
                 <TextView
                     android:id="@+id/upcomingEventsTitle"
