@@ -3,26 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.akilisawa.auth.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_login" >
-
+        android:id="@+id/awarenessFragment"
+        tools:layout="@layout/fragment_awareness"
+        android:name="com.example.akilisawa.auth.AwarenessFragment"
+        android:label="AwarenessFragment" />
+    <fragment
+        android:id="@+id/confirmEmailFragment"
+        tools:layout="@layout/fragment_confirm_email"
+        android:name="com.example.akilisawa.passwordreset.ConfirmEmailFragment"
+        android:label="ConfirmEmailFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/fragment_login"
+        android:name="com.example.akilisawa.auth.LoginFragment"
+        android:label="LoginFragment" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.akilisawa.auth.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_registration" >
-
+        android:id="@+id/resetEmailFragment"
+        tools:layout="@layout/fragment_reset_email"
+        android:name="com.example.akilisawa.passwordreset.ResetEmailFragment"
+        android:label="ResetEmailFragment" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        tools:layout="@layout/fragment_registration"
+        android:name="com.example.akilisawa.auth.RegistrationFragment"
+        android:label="RegistrationFragment" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        tools:layout="@layout/fragment_set_password"
+        android:name="com.example.akilisawa.auth.SetPasswordFragment"
+        android:label="SetPasswordFragment" />
+    <fragment
+        android:id="@+id/homepageFragment"
+        tools:layout="@layout/fragment_homepage"
+        android:name="com.example.akilisawa.explore.HomepageFragment"
+        android:label="HomepageFragment" />
+    <fragment
+        android:id="@+id/updatePasswordFragment"
+        tools:layout="@layout/fragment_update_password"
+        android:name="com.example.akilisawa.passwordreset.UpdatePasswordFragment"
+        android:label="UpdatePasswordFragment" />
+    <fragment
+        android:id="@+id/verifyPhoneFragment"
+        tools:layout="@layout/fragment_verify_phone"
+        android:name="com.example.akilisawa.auth.VerifyPhoneFragment"
+        android:label="VerifyPhoneFragment" />
 </navigation>
