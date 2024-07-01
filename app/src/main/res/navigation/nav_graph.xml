@@ -9,12 +9,20 @@
         android:id="@+id/awarenessFragment"
         tools:layout="@layout/fragment_awareness"
         android:name="com.example.akilisawa.auth.AwarenessFragment"
-        android:label="AwarenessFragment" />
+        android:label="AwarenessFragment" >
+        <action
+            android:id="@+id/action_awarenessFragment_to_homepageFragment2"
+            app:destination="@id/homepageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/confirmEmailFragment"
         tools:layout="@layout/fragment_confirm_email"
         android:name="com.example.akilisawa.passwordreset.ConfirmEmailFragment"
-        android:label="ConfirmEmailFragment" />
+        android:label="ConfirmEmailFragment" >
+        <action
+            android:id="@+id/action_confirmEmailFragment_to_verifyPhoneFragment"
+            app:destination="@id/verifyPhoneFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         tools:layout="@layout/fragment_login"
@@ -26,26 +34,43 @@
         <action
             android:id="@+id/action_loginFragment_to_homepageFragment"
             app:destination="@id/homepageFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_awarenessFragment"
+            app:destination="@id/awarenessFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetEmailFragment"
+            app:destination="@id/resetEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/resetEmailFragment"
         tools:layout="@layout/fragment_reset_email"
         android:name="com.example.akilisawa.passwordreset.ResetEmailFragment"
-        android:label="ResetEmailFragment" />
+        android:label="ResetEmailFragment" >
+        <action
+            android:id="@+id/action_resetEmailFragment_to_confirmEmailFragment"
+            app:destination="@id/confirmEmailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         tools:layout="@layout/fragment_registration"
         android:name="com.example.akilisawa.auth.RegistrationFragment"
         android:label="RegistrationFragment" >
         <action
-            android:id="@+id/action_registrationFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_registrationFragment_to_verifyPhoneFragment"
+            app:destination="@id/verifyPhoneFragment" />
     </fragment>
     <fragment
         android:id="@+id/setPasswordFragment"
         tools:layout="@layout/fragment_set_password"
         android:name="com.example.akilisawa.auth.SetPasswordFragment"
-        android:label="SetPasswordFragment" />
+        android:label="SetPasswordFragment" >
+        <action
+            android:id="@+id/action_setPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_setPasswordFragment_to_updatePasswordFragment"
+            app:destination="@id/updatePasswordFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homepageFragment"
         tools:layout="@layout/fragment_homepage"
@@ -60,5 +85,9 @@
         android:id="@+id/verifyPhoneFragment"
         tools:layout="@layout/fragment_verify_phone"
         android:name="com.example.akilisawa.auth.VerifyPhoneFragment"
-        android:label="VerifyPhoneFragment" />
+        android:label="VerifyPhoneFragment" >
+        <action
+            android:id="@+id/action_verifyPhoneFragment_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment" />
+    </fragment>
 </navigation>

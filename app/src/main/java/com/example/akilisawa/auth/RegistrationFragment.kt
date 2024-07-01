@@ -150,6 +150,7 @@ class RegistrationFragment : Fragment() {
                         }
 
                         // TODO: Navigate to next screen
+                        findNavController().navigate(R.id.action_registrationFragment_to_verifyPhoneFragment)
                     } else {
                         // Handle error response
                         Toast.makeText(
